@@ -1,0 +1,38 @@
+
+
+/* Align to the left */
+#what .items .item{
+  display: flex;
+  text-align: left;
+}
+
+/* position icon */
+#what .items .item i{
+  margin-right: 1.5rem;
+  
+  margin-bottom: 0;
+  width: 50%;
+height: 60%;
+align-self: center;
+}
+  #showcase .showcase-content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  
+    height: 100%;
+    padding: 0 2rem;
+    /* overlay */
+    position: absolute;
+    top:65px; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+
+#contact .map{
+    flex: 2;
+}

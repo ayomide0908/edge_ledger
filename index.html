@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/98fce21c87.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media="screen and (max-width:768px)" href="mobile.css">
+  <link rel="stylesheet" media="screen and (min-width:1100px)" href="widescreen.css">
+  
+
+  <title>Banks edge ledge | Accounting & Finance</title>
+</head>
+<body id="home">
+  <!-- Navbar -->
+  <nav id="navbar">
+<h1 class="logo">
+<span class="text-primary">
+  <i class="fas fa-book-open"></i>Banks</span>Ledger
+</h1>
+<ul>
+
+  <li><a href="#home">Home</a></li>
+  <li><a href="#what">What</a></li>
+  <li><a href="#who">Who</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+  </nav>
+  <!-- header showcase -->
+<header id="showcase">
+<div class="showcase-content">
+<h1 class="l-head">
+The Sky Is The Limit
+</h1>
+<p class="lead">
+  Lorem ipsum, dolor sit amet consectetur adipisicing 
+  elit. Ipsa veritatis eveniet quas vero magni eos.
+</p>
+<a href="#what" class="btg">Read More</a>
+</div>
+</header>
+<!-- what we do -->
+ <section id="what" class="bg-light py1" >
+ <div class="container">
+  <h2 class="heading text-center "><span class="text-primary">What</span>We Do</h2>
+<div class="items">
+  <div class="item">
+    <i class="fas fa-university fa-2x"></i>
+    <div>
+      <h3>Invetment Bankings</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, quo.</p>
+    </div>
+  </div>
+  <div class="item">
+     <i class="fas fa-book-reader fa-2x"></i>
+    <div>
+            <h3>Portfolio Management</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, quo.</p>
+    </div>
+  </div>
+  <div class="item">
+     <i class="fas fa-pencil-alt fa-2x"></i>
+    <div>
+      <h3>Tax & Custodial</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, quo.</p>
+    </div>
+  </div>
+</div> 
+</div>
+</section>
+<!-- section;who we are -->
+ <section id="who">
+  <div class="who-img"></div>
+  <div class="who-text bg-dark p2">
+<h2 class="heading ">
+<span class="text-primary">Who</span> We Are
+</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, nobis aliquid 
+  ex dolorum ullam deleniti officiis dolor vel
+   assumenda veritatis praesentium veniam impedit neque, fugit tenetur sint hic vero repellat?</p>
+   <h3>Our Team</h3>
+   <ul class="list">
+  <li>Mark Smith: CEO</li>
+  <li>Shannon Johnson: CFO</li>
+  <li>John Corbit: Lead Accountant</li>
+  <li>Janet Williams:Investment Manager</li>
+  <li>Kara Jackson: Senior Accountant</li>
+  <li>Ayomide Bankole: Sales Manager</li>
+</ul>
+  </div>
+ </section>
+ <!-- section: clients -->
+  <section id="clients">
+    <h2 class="heading text-center">
+      <span class="text-primary">Our</span> Clients
+    </h2>
+    <div class="items">
+      <div><img src="./img/logos/logo1.png" alt="client"></div>
+            <div><img src="./img/logos/logo2.png" alt="client"></div>
+                  <div><img src="./img/logos/logo3.png" alt="client"></div>
+                        <div><img src="./img/logos/logo4.png" alt="client"></div>
+                              <div><img src="./img/logos/logo5.png" alt="client"></div>
+    </div>
+  </section>
+  <!--section:contact/map  -->
+  <section id="contact">
+      <div class="contact1">
+  <div class="form">
+    <div class="ttt">
+<h1>Contact Us</h1>
+<h5>Please use the form below to contact us</h5>
+  </div>
+<div class="contact-block">
+  <label for="Name">Name</label>
+  <input type="name" id="Name" placeholder="Enter your name">
+  <label for="Email">Email</label>
+  <input type="email" id="Email" placeholder="Enter your email">
+  <label for="Phone">Phone Number</label>
+  <input type="tel" id="Phone" placeholder="Enter your phone number">
+  <label for="Message">Message</label>
+  <textarea id="Message" placeholder="Enter your message"></textarea>
+<input type="button" class="bg-dark submit" value="Submit" onclick="window.location.href='contact submit.html';" style="cursor: pointer; border-radius: 10px; color: white; border: solid 1px #333; font-size: 19px; font-weight: bold;">
+
+</div>
+
+  </div>
+  </div>
+  
+    <div class="map">
+      <div class="mapsize">
+
+        
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    #map {
+      height: 450px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+
+<div id="map"></div>
+<script>
+  // Create map and set default view
+  const map = L.map('map').setView([7.3775, 3.9470], 10); // Oyo State fallback view
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Use browser geolocation
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+
+      // Set view to your location
+      map.setView([lat, lon], 14);
+
+      // Add a blue marker at your location
+      const blueMarker = L.circleMarker([lat, lon], {
+        radius: 10,
+        color: 'blue',
+        fillColor: '#0000ff',
+        fillOpacity: 0.7
+      }).addTo(map);
+
+      blueMarker.bindPopup("📍 You are here").openPopup();
+    }, () => {
+      alert("Geolocation permission denied.");
+    });
+  } else {
+    alert("Geolocation is not supported by your browser.");
+  }
+</script> 
+
+      </div>
+  </div>
+  </section>
+
+
+  <footer class="mainfooter">
+<p>
+  Enoch edge ledger  &copy; 2025 All Rights Reserved.
+</p>
+</footer>
+<!--jquery cdn -->
+ <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  <!-- local js -->
+   <script src="script.js"></script> 
+</body>
+</html>
