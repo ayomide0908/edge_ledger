@@ -78,7 +78,7 @@ width: 100%;
 }
   }
 
-   @media(max-width:412px){
+   @media(max-width:360px) and (min-width:360px){
   #showcase .showcase-content{
     display: flex;
     flex-direction: column;
