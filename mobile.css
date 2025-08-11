@@ -77,3 +77,34 @@ width: 100%;
 
 }
   }
+
+   @media(max-width:412px){
+  #showcase .showcase-content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  
+    height: 100%;
+    padding: 0 2rem;
+    /* overlay */
+    position: absolute;
+    top: 140px; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  #what .container{
+    padding: 8px;
+  }
+  
+  #what p{
+
+text-align: justify;
+  }
+  #what .items .item i{
+    width: 50%;
+  }
+   }
