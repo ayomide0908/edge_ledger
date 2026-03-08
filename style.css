@@ -1,278 +1,492 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* =====================
+   Google Fonts
+===================== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-*{
+/* =====================
+   Reset & Base
+===================== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.4;
-}
-a{
-  text-decoration:none;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
-p{
-  margin: 0.75rem 0;
-}
-a{
+a {
+  text-decoration: none;
   font-weight: bold;
 }
 
-.container{
+p {
+  margin: 0.75rem 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =====================
+   Utility Classes
+===================== */
+.container {
   max-width: 1100px;
   margin: auto;
   padding: 0 2rem;
-  overflow: hidden;
 }
-.text-center{
+
+.text-center {
   text-align: center;
-  margin: 1rem;
 }
-.text-primary{
+.text-primary {
   color: #93cb52;
 }
-.bg-light{
+
+.bg-light {
   background: #f4f4f4;
   color: #333;
-
 }
-.bg-dark{
+.bg-dark {
   background: #333;
   color: #fff;
 }
-.list{
-  margin: 0.5rem 0;
+
+.py1 {
+  padding: 1.5rem 0;
+}
+.py2 {
+  padding: 2.5rem 0;
+}
+.py3 {
+  padding: 3rem 0;
+}
+
+.p1 {
+  padding: 1.5rem;
+}
+.p2 {
+  padding: 2rem;
+}
+.p3 {
+  padding: 3rem;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.list {
   list-style: none;
+  margin: 0.75rem 0;
 }
-.list li{
+
+.list li {
   padding: 0.5rem 0;
-  border-bottom: #444 dotted 1px;
-
+  border-bottom: 1px dotted #555;
 }
 
-.l-head{
+/* =====================
+   Button
+===================== */
+.btn {
+  display: inline-block;
+  color: #fff;
+  background: #93cb52;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #bcf180;
+}
+
+/* =====================
+   Navbar
+===================== */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: #333;
+  color: #fff;
+  z-index: 100;
+  padding: 1rem 1.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+#nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0.25rem;
+}
+
+#nav-links a {
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  transition: background 0.2s ease;
+}
+
+#nav-links a:hover {
+  background: #93cb52;
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* =====================
+   Showcase / Hero
+===================== */
+#showcase {
+  background: #333 url("./img/showcase.jpg") no-repeat center center / cover;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+}
+
+#showcase .showcase-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.l-head {
   font-size: 4rem;
   margin-bottom: 0.75rem;
   line-height: 1.1;
 }
-.lead{
+
+.lead {
   font-size: 1.3rem;
   margin-bottom: 2rem;
+  max-width: 600px;
 }
-.py1{padding: 1.5rem 0;}
-.py2{padding: 2rem 0;}
-.py3{padding: 3rem 0;}
 
-.p1{padding: 1.5rem ;}
-.p2{padding: 2rem ;}
-.p3{padding: 3rem ;}
-
-.btg:hover{
-  background: #bcf180;
+/* =====================
+   What We Do
+===================== */
+#what .items {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
 }
-.btg{
-  display: inline-block;
-  color: #fff;
-  padding: 0.5rem 0.6rem;
-  border: none;
+
+#what .item {
+  flex: 1;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+#what .item i {
   background: #93cb52;
-  border-radius: 5px;
-  max-width: 200px;
-  align-self: center;
-}
-
-/* navbar */
-#navbar{
-  display: flex;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  background: #333;
-  color: white;
-  z-index: 1;
-  padding: 1rem;
-}
-
-#navbar ul{
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-#navbar ul a{
   color: #fff;
-  padding: 0.75rem;
-  margin: 0 0.25rem;
-
-}#navbar ul a:hover{
-background: #93cb52;
-border-radius: 5px;
-}
-/* showcase */
-  #showcase{
-    background: #333 url('./img/showcase.jpg') no-repeat center center/cover; 
-    height: 100vh;
-    color: white;
-    
-  }
-  #showcase .showcase-content{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-  
-    height: 100%;
-    padding: 0 2rem;
-    /* overlay */
-    position: absolute;
-    top:65  px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.4);
-  }
-
-/* section:what we do */
-#what .items{
-  display: flex;
-  padding: 1rem;
-}
-#what .items .item{
-flex: 1;
-text-align: center;
-  padding: 1rem;
-}
-#what .items .item i{
-  background: #93cb52;
-  padding: 1rem;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;  
-  align-self: center;
-  height: 100px;
-width: 100px;
-  /* margin-bottom: 1rem;
-  align-items: center; */
+  align-items: center;
+  margin: 0 auto 1rem;
 }
-/* section:who we are */
-#who{
-  display: flex;
 
+#what .item h3 {
+  margin-bottom: 0.5rem;
 }
-#who div{
+
+/* =====================
+   Who We Are
+===================== */
+#who {
+  display: flex;
+  min-height: 400px;
+}
+
+#who .who-img {
   flex: 1;
+  background: url("./img/people.jpg") no-repeat center center / cover;
+  min-height: 300px;
 }
-#who .who-img{
-  background: url('./img/people.jpg') no-repeat center center/cover ;
-}
-/* clients */
-#clients .items{
-  display: flex;
-justify-content: space-between;
-margin: 20px 50px;
 
-}
-#clients .items img{
-  width: 50%;
-}
-#contact{
-
-  display: flex;
+#who .who-text {
   flex: 1;
-flex-wrap: wrap;
-  flex-direction: row;
+  padding: 2rem;
+}
 
+#who .who-text h3 {
+  margin: 1rem 0 0.5rem;
 }
-#contact h1{
 
+/* =====================
+   Clients
+===================== */
+#clients .items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
 }
-#contact .contact1{
-    width: 50%;
-    background: #93cb52;
-    color: white;
-    height: 450px;
+
+#clients .items img {
+  width: 120px;
+  object-fit: contain;
 }
-#contact  .form{
+
+/* =====================
+   Contact & Map
+===================== */
+#contact {
+  display: flex;
+  min-height: 450px;
+}
+
+/* Form side */
+.contact-form-wrap {
+  flex: 1;
+  background: #93cb52;
+  color: #fff;
   display: flex;
   flex-direction: column;
-
-  
+  padding: 2rem;
 }
-#contact .contact-block{
+
+.form-header {
+  margin-bottom: 1.5rem;
+}
+
+.form-header h2 {
+  font-size: 1.8rem;
+}
+
+.form-header p {
+  opacity: 0.9;
+  margin: 0.25rem 0 0;
+}
+
+.contact-block {
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
+}
 
-  padding: 1rem;
-  margin: 1rem;
-  #Message{
-    padding: 10px;
-  }
-input{
-  border: #c6c6c6 1px solid;
-  padding: 10px;
-  color: black;
-margin: 5px;
+.contact-block label {
+  font-weight: bold;
+  font-size: 0.9rem;
 }
-textarea{
-    border: #c6c6c6 1px solid;
 
-margin: 5px;
-
-}
-label{
-  margin: 5px;
-  margin-bottom: 0px;
-}
-}
-.ttt{
-
-  margin-bottom: -50px;
-  padding:20px 30px;
-  line-height: 25px;
-}
-.map{
-
-width: 50%;
-
-}
-.mapsize{
-width:100%;
-background: #f4f4f4;
-}
-.size{
-  height: 450px;
+.contact-block input,
+.contact-block textarea {
+  border: 1px solid #c6c6c6;
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #333;
   width: 100%;
 }
-.submit{
-  border: solid;
-}
-.submit:hover{
-  opacity: 0.9;
-}
-.submit:active{
-background: #444;
 
-}
-#home .reset{
-background: #333;
-border: #333 solid 1px;
-padding: 14px;
-color: white;
-font-weight: bold;
-border-radius: 5px;
-margin-top: 15px;
-}
-#home .reset:hover{
-  opacity: 0.8;
+.contact-block textarea {
+  resize: vertical;
 }
 
+.submit-btn {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  background: #333;
+  font-size: 1rem;
+}
 
-.mainfooter {
-  color: white;
-  padding: 20px;
+.submit-btn:hover {
   background: #444;
+}
+
+/* Map side */
+.map-wrap {
+  flex: 1;
+}
+
+#map {
+  height: 100%;
+  min-height: 450px;
+  width: 100%;
+}
+
+/* =====================
+   Footer
+===================== */
+.mainfooter {
+  background: #444;
+  color: #fff;
   text-align: center;
+  padding: 1.25rem;
+}
+
+/* =====================
+   RESPONSIVE — Tablet (≤768px)
+===================== */
+@media (max-width: 768px) {
+  /* Navbar — show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #333;
+    padding: 1rem 0;
+    gap: 0;
+  }
+
+  #nav-links.open {
+    display: flex;
+  }
+
+  #nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  #nav-links a {
+    display: block;
+    padding: 0.75rem;
+    border-radius: 0;
+  }
+
+  /* Hero */
+  .l-head {
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  /* What We Do — stack vertically */
+  #what .items {
+    flex-direction: column;
+  }
+
+  /* Who We Are — stack vertically */
+  #who {
+    flex-direction: column;
+  }
+
+  #who .who-img {
+    min-height: 250px;
+  }
+
+  /* Contact — stack vertically */
+  #contact {
+    flex-direction: column;
+  }
+
+  .contact-form-wrap {
+    width: 100%;
+  }
+
+  .map-wrap {
+    width: 100%;
+  }
+
+  #map {
+    min-height: 350px;
+  }
+
+  /* Clients */
+  #clients .items img {
+    width: 80px;
+  }
+}
+
+/* =====================
+   RESPONSIVE — Mobile (≤480px)
+===================== */
+@media (max-width: 480px) {
+  .l-head {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  #clients .items {
+    gap: 1rem;
+  }
+
+  #clients .items img {
+    width: 60px;
+  }
+
+  .contact-form-wrap {
+    padding: 1.5rem;
+  }
+}
+
+/* =====================
+   RESPONSIVE — Widescreen (≥1100px)
+===================== */
+@media (min-width: 1100px) {
+  .l-head {
+    font-size: 5rem;
+  }
+
+  #what .item {
+    padding: 2rem;
+  }
+
+  #clients .items img {
+    width: 140px;
+  }
 }
